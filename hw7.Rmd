@@ -1,0 +1,42 @@
+---
+title: 'MATH 437 HW7'
+author: "Drew Remmenga"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+```{r}
+library(MASS)
+set.seed(437)
+mu1=c(0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+mu2=c(3,3,3,3,3,3,3,3,3,3,3,3,3,3)
+mu3=c(-3,-3,-3,-3,-3,-3,-3,-3,-3,-3,-3,-3,-3,-3)
+I=diag(14)
+I4=4*I
+X=mvrnorm(mu=mu1,Sigma=I4,n=16)
+Y=mvrnorm(mu=mu2,Sigma=I4,n=8)
+Z=mvrnorm(mu=mu3,Sigma=I4,n=8)
+```
+$\hat{\beta}= (x^{t}x)^{-1}x$
+\newline
+$S= x^{t}\Sigma x$
+\newline
+$w_{k} = W_{k}(n,\Sigma)$
+\newline
+```{r}
+plot(X)
+points(Y,col="red")
+points(Z,col="blue")
+```
+$\mathbb{R}^{90}$
+\newline 
+0
+\newline
+$\mathbb{R}^{10}$
+\newline 
+0
+\newline 
+0
+\newline
+$\frac{Q}{n-1}$
+
